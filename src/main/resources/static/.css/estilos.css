@@ -1,0 +1,82 @@
+body{
+    background-color:mistyrose;
+    font-family: var;
+}
+
+header{
+    background-color:darksalmon;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+}
+
+aside{
+    background-color:peachpuff;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 20%;
+    bottom: 20px;
+    padding: 10px;
+}
+
+section{
+    background-color:mistyrose;
+    overflow-y: scroll;
+    position: fixed;
+    top: 130px;
+    left: 22%;
+    width: 78%;
+    bottom: 20px;
+    padding: 10px;
+}
+
+footer{
+    background-color:darksalmon;
+    color: white;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    bottom: 0px;
+    height: 20px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+.nav-link{
+    color: darkgreen;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.logo{
+    font-size: 32px;
+    font-weight: bold;
+    padding-left: 40px;
+    line-height: 100px;
+}
+.nav-menu{
+    display: flex;
+    list-style: none;
+    padding-right: 40px;
+}
+
+.nav-menu-item{
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 90px;
+}
+
+.enlace{
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+.enlace:hover{
+    background-color: indianred;
+}

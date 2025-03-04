@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- xhtml extendido -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Castraciones</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+     
+         <section th:fragment="listado" id="animals">
+            <div class="row p-5">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>[[#{animal.listado}]]</h4>
+                        </div>
+
+                        <div th:if="${animals != null and !animals.empty}">
+                            <table class="table table-striped table-hover">
+                                <thead class="table-danger">
+                                    <tr><th>#</th>
+                                        <th>[[#{animal.edad}]]</th>
+                                        <th>[[#{animal.tamanio}]]</th>
+                                        <th>[[#{animal.peso}]]</th>
+                                        <th>[[#{animal.sexo}]]</th>
+                                        <th>[[#{animal.raza}]]</th>
+                                        <th>[[#{animal.comportamiento}]]</th>
+                                        <th>[[#{animal.imagen}]]</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="c : ${animals}">
+                                        <td>[[${c.idAnimal}]]</td>
+                                        <td>[[${c.edad}]]</td>
+                                        <td>[[${c.tamanio}]]</td>
+                                        <td>[[${c.peso}]]</td>
+                                        <td>[[${c.sexo}]]</td>
+                                        <td>[[${c.raza}]]</td>
+                                        <td>[[${c.comportamiento}]]</td>
+                                        <td><img th:src="@{${c.imagen}}" alt="no data" height="85"/></td>                  
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text-center p-2" th:if="${animals == null or animals.empty}">
+                            <span>[[#{lista.vacia}]]</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </body>
+</html>

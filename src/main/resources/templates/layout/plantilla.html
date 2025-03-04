@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head  th:fragment="head"> <!-- Aquí se configura el ícono -->
+        <title>Castraciones</title>
+        <meta charset="UTF-8"/>
+
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}"/>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    </head>
+    <body>
+        <header th:fragment="header" class="header">
+            <section id="main-header" class="py-1 bg-danger text-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1>[[#{aplicacion.titulo}]]</h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <nav class="navbar navbar-expand-sm navbar-info bg-info p-0 py-2">
+                <div class="container">
+                    <a th:href="@{/}" class="navbar-brand">[[#{aplicacion.inicio}]]</a>
+                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <ul class="navbar-nav">
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/producto/listado}">[[#{plantilla.campañas}]]</a></li>
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/categoria/listado}">[[#{plantilla.quienes.somos}]]</a></li> <!-- URL -->
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/producto/listado}">[[#{plantilla.que.hacemos}]]</a></li>
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/animal/listado}">[[#{plantilla.adopcion}]]</a></li>
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/producto/listado}">[[#{plantilla.como.ayudar}]]</a></li>
+                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/producto/listado}">[[#{plantilla.contactenos}]]</a></li>
+                           
+                                </ul>
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" 
+                                   data-bs-toggle="dropdown" 
+                                   href="#" role="button" 
+                                   aria-expanded="false">[[#{plantilla.idioma}]]</a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" th:href="@{/(lang=es)}">Español</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/(lang=en)}">English</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/(lang=fr)}">Française</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/(lang=pt)}">Portugaise</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div id="resultBlock">
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <footer th:fragment="footer" class="p-1 mt-4 bg-danger text-white"> <!-- p = padding 2 pixeles -->
+            <p class="text-center lead">&COPY; [[#{plantilla.derechos}]]</p>
+        </footer>
+
+    </body>
+</html>
