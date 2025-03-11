@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- xhtml extendido -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Castraciones</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <section th:fragment="listado" id="campanias">
+            <div class="row p-5">
+                <div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="text-center p-1">[[#{campania.proximaFecha}]]</h4>
+                        </div> 
+                    </div>
+                    <div th:if="${campanias != null and !campanias.empty}">
+                        <table class="table table-striped table-hover">
+                            <thead class="table-info">
+
+                                <th class="text-center">[[#{campania.direccion}]]</th>
+                                <th class="text-center">[[#{campania.fecha}]]</th>
+                                <th class="text-center">[[#{campania.hora.inicio}]]</th>
+                                <th class="text-center">[[#{campania.hora.final}]]</th>
+                                <!--<th>[[#{campania.imagen1}]]</th>
+                                <th>[[#{campania.imagen2}]]</th> -->
+
+                                <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="c : ${campanias}">
+
+                                    <td class="text-center">[[${c.direccion}]]</td>
+                                    <td class="text-center">[[${c.fecha}]]</td>
+                                    <td class="text-center">[[${c.horaInicio}]]</td>
+                                    <td class="text-center">[[${c.horaFinal}]]</td>
+                                    <!-- <td>[[${c.imagenPrecios}]]</td>
+                                     <td>[[${c.imagenRequisitos}]]</td> -->
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class=" text-center p-2" th:if="${campanias == null or campanias.empty}">
+                        <span>[[#{lista.vacia}]]</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section th:fragment="preciosCan">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-9"> <!-- Limita la tabla a 9 columnas de ancho -->
+                        <div class="card">
+                                <div class="card-header">
+                                    <h5>[[#{campania.precios.can}]]</h5>
+                                </div>
+                            </div>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>  
+                                    <th class="table-danger text-center" scope="col">Peso</th>
+                                    <th class="table-danger text-center" scope="col">Monto</th>
+                                    <th class="table-danger text-center" scope="col">Sexo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class='text-center' scope="row">Hasta 10 kg</th>
+                                    <td class='text-center'>₡ 16 500</td>
+                                    <td class='text-center'>Macho/Hembra</td>
+                                </tr>
+                                <tr>
+                                    <th class='text-center' scope="row">De 10,1 a 15 kg</th>
+                                    <td class='text-center'>₡ 18 000</td>
+                                    <td class='text-center'>Macho/Hembra</td>
+                                </tr>
+                                <tr>
+                                    <th class='text-center' scope="row">De 15,1 a 19 kg</th>
+                                    <td class='text-center'>₡ 22 000</td>
+                                    <td class='text-center'>Macho/Hembra</td>
+                                </tr>
+                                <tr>
+                                    <th class='text-center' scope="row">De 19,1 a 25 kg</th>
+                                    <td class='text-center'>₡ 28 000</td>
+                                    <td class='text-center'>Macho/Hembra</td>
+                                </tr>
+                                <tr>
+                                    <th class='text-center' scope="row">de 25,1 a 30</th>
+                                    <td class='text-center'>₡ 32 000</td>
+                                    <td class='text-center'>Macho</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+            <!-- Fragmento para los precios de las castraciones en felinos -->
+            <section th:fragment="preciosFeli">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-9"> 
+                            <h5 class='p-2'></h5>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>[[#{campania.precios.feli}]]</h5>
+                                </div>
+                            </div>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="table-danger text-center" scope="col">Peso</th>
+                                        <th class="table-danger text-center" scope="col">Monto</th>
+                                        <th class="table-danger text-center" scope="col">Sexo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th class='text-center' scope="row">Cualquier peso</th>
+                                        <td class='text-center'>₡ 15 500</td>
+                                        <td class='text-center'>Macho/Hembra</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section th:fragment="informacionCampania">
+                <h5 class='p-3'> </h5>
+                <h5 class="p-3">[[#{campania.aspectos.importantes}]]</h5>
+                <ul class="list-group">
+                    <li class="list-group-item">[[#{campania.info4}]]</li>
+                    <li class="list-group-item">[[#{campania.info5}]]</li>
+                    <li class="list-group-item">[[#{campania.info1}]]</li>
+                    <li class="list-group-item">[[#{campania.info2}]]</li>
+                    <li class="list-group-item">[[#{campania.info3}]]</li>
+                </ul>
+            </section>
+    </body>
+</html>
