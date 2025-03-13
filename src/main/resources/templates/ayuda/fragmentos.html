@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- xhtml extendido -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Castraciones</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <section th:fragment="voluntario">
+            <div class="container-fluid py-5" style="background: url('https://res.cloudinary.com/worldpackers/image/upload/c_fill,f_auto,q_auto,w_1024/v1/guides/article_cover/wk3n9xokiyah84pr7uqv') center/cover no-repeat;">
+                <div class="row justify-content-center">
+                    <!-- Formulario -->
+                    <div class="col-md-5">
+                        <div class="card p-4" style="background-color: rgba(255, 255, 255, 0.75);">
+                            <h3 class="text-center bg-danger text-white py-2 rounded">Ser Voluntario</h3>
+                            <form>
+                                <div class="mb-2">
+                                    <label>Nombre completo</label>
+                                    <input type="text" class="form-control" placeholder="Escribe tu nombre"/>
+                                </div>
+                                <div class="mb-2">
+                                    <label>Correo electrónico</label>
+                                    <input type="email" class="form-control" placeholder="Escribe tu correo"/>
+                                </div>
+                                <div class="mb-2">
+                                    <label>Teléfono</label>
+                                    <input type="text" class="form-control" placeholder="Escribe tu teléfono"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Dirección</label>
+                                    <textarea class="form-control" rows="2" placeholder="Escribe tu dirección"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-danger w-100">Enviar</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Información -->
+                    <div class="col-md-5">
+                        <div class="card p-3 bg-light opacity-75">
+                            <div class="card-body">
+                                <ul class="list-unstyled">
+                                    <li>✔️ Veterinarios y técnicos para la atención en jornadas de castración.</li>
+                                    <li>✔️ Voluntarios para el área de sensibilización y educación comunitaria.</li>
+                                    <li>✔️ Abogados para asesoría legal en casos relacionados con bienestar animal.</li>
+                                    <li>✔️ Personas con habilidades en organización de eventos para apoyar nuestras jornadas y actividades.</li>
+                                    <li>✔️ Voluntarios con ganas de colaborar, independientemente de su formación,
+                                        para apoyar en distribución de alimentos, recolección de donaciones o asistencia en eventos.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
+    </body>
+</html>
