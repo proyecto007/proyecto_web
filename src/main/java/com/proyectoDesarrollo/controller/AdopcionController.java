@@ -1,7 +1,6 @@
 package com.proyectoDesarrollo.controller;
-//import com.tienda.service.FirebaseStorageService;
 
-import com.proyectoDesarrollo.service.AnimalService;
+import com.proyectoDesarrollo.service.AdopcionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,17 +10,18 @@ import org.springframework.web.bind.annotation.RequestMapping; //$ si es un atri
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-@Controller //Pasa información a los archv html
-@RequestMapping("/animal")
-public class AnimalController {
+@Controller
+@RequestMapping("/adopcion")
+public class AdopcionController {
 
     @Autowired
-    private AnimalService animalService;
-         
+    private AdopcionService adopcionService;
+
     @GetMapping("/listado")
     public String listado(Model model) {
-        var lista=animalService.getAnimals(false);
-        model.addAttribute("animals", lista);
-        return "/animal/listado";
+        var lista = adopcionService.getAdopcions(false);
+        model.addAttribute("adopcions", lista);
+        return "/adopcion/listado";
     }
+
 }

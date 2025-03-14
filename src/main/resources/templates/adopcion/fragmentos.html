@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Adoptame Liberia</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <section th:fragment="informacion" id="adopcions">
+            <div class="container mt-4">
+                <h2>Adopción Responsable</h2>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3>Beneficios de Adoptar</h3>
+                        <p>Adoptar una mascota salva una vida y te brinda un compañero leal. Cuando adoptes considera a los animales mayores o con necesidades especiales. Informarse sobre los refugios y organizaciones de rescate en el área más cercana es importante.</p>
+                        <ul>
+                            <li>Rescatas una vida</li>
+                            <li>Obtienes un compañero leal</li>
+                            <li>Ayudas a reducir la sobrepoblación de animales</li>
+                            <li>Apoyas a refugios y organizaciones de rescate</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3>Proceso de Adopción</h3>
+                        <p>El proceso de adopción por lo general incluye una entrevista, verificación de información y una visita al hogar. Es importante estar seguros y preparados para asumir la responsabilidad de una mascota a largo plazo.</p>
+                        <ol>
+                            <li>Investiga y elige un refugio de tu preferencia</li>
+                            <li>Completa la solicitud de adopción</li>
+                            <li>Participa en la entrevista</li>
+                            <li>Permite la visita al hogar</li>
+                            <li>Firma el contrato de adopción</li>
+                            <li>¡Listo, dale la bienvenida a tu nueva mascota!</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3>Cuidados Post-adopción</h3>
+                        <p>Dale tiempo a tu mascota para que se adapte a su nuevo hogar. Establece una rutina de alimentación, ejercicio y aseo. Brinda un ambiente seguro para tu mascota.</p>
+                        <ul>
+                            <li>Alimentación adecuada</li>
+                            <li>Ejercicio regular</li>
+                            <li>Aseo y cuidados veterinarios</li>
+                            <li>Entrenamientos</li>
+                            <li>Paciencia y amor</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section th:fragment="cuidados">
+            <div class="container mt-4">
+                <h2>Cuidados esenciales para tu Mascota</h2>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Alimentación Adecuada</h5>
+                                <p class="card-text">Proporciona una dieta equilibrada según la especie y edad de tu mascota. Consulta con un veterinario para recomendaciones específicas.</p>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Higiene y Aseo</h5>
+                                <p class="card-text">Mantén a tu mascota limpia con baños regulares, cepillado y cuidado de uñas. La higiene previene enfermedades y mejora el bienestar.</p>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Visitas Veterinarias</h5>
+                                <p class="card-text">Programa chequeos regulares con el veterinario para vacunas, desparasitación y detección temprana de problemas de salud.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Ejercicio y Actividad Física</h5>
+                                <p class="card-text">Asegura que tu mascota tenga suficiente ejercicio diario para mantener su salud física y mental.</p>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Ambiente Seguro</h5>
+                                <p class="card-text">Crea un entorno seguro y libre de peligros para tu mascota, con espacios adecuados para descansar y jugar.</p>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Amor y Atención</h5>
+                                <p class="card-text">Dedica tiempo a jugar, interactuar y mostrar afecto a tu mascota. El cariño fortalece el vínculo y mejora su bienestar emocional.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section th:fragment="entrenamientoMascotas">
+            <div class="container mt-4">
+                <h2>Entrenamiento efectivo para tus mascotas</h2>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Órdenes Básicas</h5>
+                                <p class="card-text">Enseña órdenes como "sentado", "quieto" y "ven" con refuerzo positivo y paciencia. La consistencia es clave.</p>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Entrenamiento con refuerzo positivo</h5>
+                                <p class="card-text">Utiliza recompensas como golosinas y juguetes para motivar a tu mascota durante el entrenamiento.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Paciencia y Consistencia</h5>
+                                <p class="card-text">El entrenamiento requiere tiempo y paciencia. Sé consistente con las órdenes y no te rindas ante los desafíos.</p>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Evita el castigo físico</h5>
+                                <p class="card-text">Nunca uses el castigo físico. El refuerzo positivo es más efectivo y fortalece el vínculo con tu mascota.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

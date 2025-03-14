@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<!-- xhtml extendido -->
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
     <head th:replace="~{layout/plantilla :: head}">
-        <title>Adoptame Liberia</title>
+        <title>Adoptame Liberia - Bienestar Animal</title>
         <meta charset="UTF-8"/>
-
+        <link rel="stylesheet" th:href="@{/css/styles.css}"/>
     </head>
     <body>
         <header th:replace="~{layout/plantilla :: header}"/>
+
         <div class="container mt-4">
             <!-- Carrusel de imágenes -->
             <div id="carouselExample" class="carousel slide opacity-75 mb-4">
@@ -42,18 +42,15 @@
                 <h2 class="bg-danger text-white p-3 rounded">INFORMACIÓN GENERAL</h2>
             </div>
 
-
             <div class="container">
-                <div class="row g-3 mt-4"> <!-- g-3 agrega espacio entre columnas -->
+                <div class="row g-3 mt-4"> 
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-header text-white bg-danger p-3">
                                 ¿Qué Encontrarás en Nuestra Página?
                             </div>
                             <div class="card-body">
-                                <blockquote class="blockquote mb-0 bg-">
-                                    <p>Este espacio está diseñado para brindar información sobre nuestras jornadas de castración, costos y requisitos, además de encontrar hogar para animales en adopción.</p>
-                                </blockquote>
+                                <p>Este espacio está diseñado para brindar información sobre nuestras jornadas de castración, costos y requisitos, además de encontrar hogar para animales en adopción.</p>
                             </div>
                         </div>
                     </div>
@@ -64,9 +61,7 @@
                                 Únete y Sé Parte del Cambio
                             </div>
                             <div class="card-body">
-                                <blockquote class="blockquote mb-0">
-                                    <p>Puedes inscribir a tu mascota en nuestras campañas, difundir nuestra labor o colaborar como voluntario. ¡Cada ayuda cuenta!</p>
-                                </blockquote>
+                                <p>Puedes inscribir a tu mascota en nuestras campañas, difundir nuestra labor o colaborar como voluntario. ¡Cada ayuda cuenta!</p>
                             </div>
                         </div>
                     </div>
@@ -77,18 +72,52 @@
                                 Compromiso con el Bienestar Animal
                             </div>
                             <div class="card-body">
-                                <blockquote class="blockquote mb-0">
-                                    <p>Creemos que cada animal merece una vida digna y libre de sufrimiento. La esterilización es un paso clave para prevenir el abandono y el maltrato.</p>
-                                </blockquote>
+                                <p>Creemos que cada animal merece una vida digna y libre de sufrimiento. La esterilización es un paso clave para prevenir el abandono y el maltrato.</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header text-white bg-primary p-3">
+                            Adopción Responsable
+                        </div>
+                        <div class="card-body">
+                            <p>Encuentra información sobre los beneficios de adoptar, el proceso de adopción y los cuidados post-adopción.</p>
+                            <a th:href="@{/adopcion/informacion}" class="btn btn-primary btn-sm mt-2">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header text-white bg-success p-3">
+                            Cuidados para Mascotas
+                        </div>
+                        <div class="card-body">
+                            <p>Aprende sobre los cuidados esenciales para tu mascota, incluyendo alimentación, higiene y visitas veterinarias.</p>
+                            <a th:href="@{/cuidados}" class="btn btn-success btn-sm mt-2">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header text-white bg-warning p-3">
+                            Entrenamiento para Mascotas
+                        </div>
+                        <div class="card-body">
+                            <p>Descubre consejos para un entrenamiento efectivo, desde órdenes básicas hasta socialización y refuerzo positivo.</p>
+                            <a th:href="@{/entrenamiento}" class="btn btn-warning btn-sm mt-2">Ver más</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <footer th:replace="~{layout/plantilla :: footer}">
-
-        </footer>
+        <footer th:replace="~{layout/plantilla :: footer}"></footer>
     </body>
 </html>
