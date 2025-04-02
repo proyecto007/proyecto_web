@@ -16,4 +16,12 @@ public class AyudaController {
     public String mostrarListado() {
         return "/ayuda/listado";
     }
+    @GetMapping("/listado2")
+    public String listado2() {
+        return "/ayuda/listado2";
+    }
+    @GetMapping("/listado3")
+    public String listado3() {
+        return "/ayuda/listado3";
+    }
 }
