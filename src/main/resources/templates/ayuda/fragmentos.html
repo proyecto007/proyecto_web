@@ -57,6 +57,79 @@
             </div>
 
         </section>
-        
+        <section th:fragment="monetaria"></section>
+        <section th:fragment="material">
+            <div class="container my-5">
+                <div class="row align-items-center border-start border-danger ps-4">
+                    <!-- Texto -->
+                    <div class="col-md-6">
+                        <h2 class="fw-bold">Donación Material</h2>
+                        <p>
+                            Donar insumos a Castraciones Liberia es una forma invaluable de apoyar el bienestar animal en nuestra comunidad. 
+                            Tu contribución de alimentos, medicamentos, insumos veterinarios, juguetes y otros materiales esenciales ayuda 
+                            a mejorar la calidad de vida de muchos perros y gatos en situación de calle o en riesgo.
+                        </p>
+                        <p>
+                            Cada donación nos permite seguir brindando atención a los animales que más lo necesitan y promover una tenencia responsable. 
+                            ¡Tu ayuda marca la diferencia! Contáctanos y sé parte del cambio.
+                        </p>
+                        <!-- Botón que activa el modal -->
+                        <button class="btn btn-danger btn-lg rounded-pill fw-bold px-4" data-bs-toggle="modal" data-bs-target="#donationModal">
+                            QUIERO DONAR
+                        </button>
+                    </div>
+                    <!-- Imagen -->
+                    <div class="col-md-6 text-center">
+                        <img src="https://static.vecteezy.com/system/resources/previews/026/137/934/non_2x/cartoon-donate-food-and-equipment-for-stray-dog-illustration-vector.jpg" 
+                             alt="Donación Material" class="img-fluid"/>
+                    </div>
+                </div>
+
+                <!-- Nota de impuestos -->
+                <p class="text-center mt-4 text-muted">
+                    Podés escoger cualquier monto en colones o dólares y hacer tu donación que es 100% libre de impuestos.
+                </p>
+            </div>
+
+            <!-- MODAL DE DONACIÓN -->
+            <div class="modal fade" id="donationModal" tabindex="-1" aria-labelledby="donationModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header bg-danger">
+                            <h5 class="modal-title text-white">Insumos Esenciales para Rescates</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Estos son algunos de los materiales que más se necesitan para el rescate y cuidado de los animales:</p>
+                            <ul>
+                                <li>Alimentos para perros y gatos (secos y enlatados)</li>
+                                <li>Medicamentos veterinarios (antibióticos, antiparasitarios, vitaminas)</li>
+                                <li>Mantas y cobijas</li>
+                                <li>Juguetes para animales</li>
+                                <li>Artículos de limpieza (jabón, desinfectantes, toallas)</li>
+                                <li>Vendas, gasas y material de primeros auxilios</li>
+                            </ul>
+                            <p>Si desea donar materiales, por favor ingrese sus datos de contacto:</p>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" th:attr="id='name', required='required'"/>
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" th:attr="id='email', required='required'"/>
+
+                                </div>
+                                <button type="submit" class="btn btn-danger w-100">Enviar Donación</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
     </body>
 </html>
