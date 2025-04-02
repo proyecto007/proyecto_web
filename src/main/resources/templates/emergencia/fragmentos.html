@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!-- xhtml extendido -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Adoptame Liberia</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+            <section th:fragment="pasos">
+                <h5 class='p-3'> </h5>
+                <h4 class="p-3">[[#{emergencia.titulo}]]</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">[[${c.titulo}]]</li>
+                    
+                </ul>
+            </section>
+    </body>
+</html>

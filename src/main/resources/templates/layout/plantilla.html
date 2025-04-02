@@ -61,6 +61,9 @@
                             <li class="nav-item">
                                 <a class="nav-link active bg-info text-dark border-0 border-bottom border-dark" aria-current="page" th:href="@{/animal/listado}">[[#{plantilla.adopcion}]]</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link active bg-info text-dark border-0 border-bottom border-dark" aria-current="page" th:href="@{/emergencia/listado}">[[#{plantilla.emergencia}]]</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link active dropdown-toggle bg-info text-dark border-0 border-bottom border-dark" data-bs-toggle="dropdown" th:href="@{/ayuda/listado}" role="button" aria-expanded="false">[[#{plantilla.como.ayudar}]]</a>
                                 <ul class="dropdown-menu">
@@ -70,7 +73,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active bg-info text-dark border-0 border-bottom border-dark" aria-current="page" href="@{/producto/listado}">[[#{plantilla.contactenos}]]</a>
+                                <a class="nav-link active bg-info text-dark border-0 border-bottom border-dark" aria-current="page" th:href="@{/producto/listado}">[[#{plantilla.contactenos}]]</a>
                             </li>
                         </ul>
 

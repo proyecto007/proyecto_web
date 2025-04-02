@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Adoptame Liberia</title>
+        <meta charset="UTF-8"/>
+    </head>
+    
+    <body>
+        <section th:fragment="Contáctenos">
+            <h2 class="text-black">Contáctenos</h2>
+
+            <div class="card bg-danger text-white p-4">
+                <h4 class="fw-bold">Solicita más información</h4>
+                <p><i class="fas fa-phone"></i> +506 8870 5727</p>
+                <p><i class="fas fa-map-marker-alt"></i> Estamos ubicados en Liberia y cubrimos alrededores</p>
+                <p><i class="fas fa-envelope"></i> perrosygatosliberia@gmail.com</p>
+
+                <div class="nav-item">
+                    <a class="btn btn-outline-light d-block text-start" th:href="@{/Horario/listado}">
+                    <i class="fas fa-calendar-alt"></i> Horarios y ubicación
+                    </a> 
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center mt-4">
+                <a href="https://www.facebook.com/castracionesliberia?mibextid=LQQJ4d&rdid=zpOQp9OLulLqiczm&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F15SCSxjH2n%2F%3Fmibextid%3DLQQJ4d" class="me-3">
+                    <i class="fab fa-facebook fa-2x text-dark"></i>
+                </a>
+                <a href="https://www.instagram.com/castracionesliberia/">
+                    <i class="fab fa-instagram fa-2x text-dark"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contenedor donde se cargará dinámicamente el fragmento de Horarios -->
+        <div id="contenido-horarios"></div>
+
+        <script>
+            function cargarHorarios() {
+                fetch('/Horarios/fragmentos') // Ruta que devuelve el fragmento
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('contenido-horarios').innerHTML = data;
+                    })
+                    .catch(error => console.error('Error al cargar los horarios:', error));
+            }
+        </script>
+    </body>
+</html>
