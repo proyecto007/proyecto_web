@@ -10,11 +10,32 @@
     <body>
             <section th:fragment="pasos">
                 <h5 class='p-3'> </h5>
-                <h4 class="p-3">[[#{emergencia.titulo}]]</h4>
-                <ul class="list-group">
-                    <li class="list-group-item">[[${c.titulo}]]</li>
-                    
-                </ul>
+                <h3 class="p-3" >[[#{emergencia.encabezado}]]</h3>
+                <div class="row p-2">
+                <div>              
+                    <div th:if="${emergencias != null and !emergencias.empty}">
+                        <table class="table table-striped table-hover">
+                            <thead class="table-info">
+
+                                <th class="text-center">[[#{emergencia.titulo}]]</th>
+                                <th class="text-center">[[#{emergencia.detalle}]]</th> 
+                                <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="c : ${emergencias}">
+
+                                    <td>[[${c.titulo}]]</td>
+                                    <td>[[${c.detalle}]]</td>     
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class=" text-center p-2" th:if="${emergencias == null or emergencias.empty}">
+                        <span>[[#{lista.vacia}]]</span>
+                    </div>
+                </div>
+            </div>
             </section>
-    </body>
+    </body>
 </html>
