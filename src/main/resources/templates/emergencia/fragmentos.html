@@ -8,10 +8,12 @@
         <meta charset="UTF-8"/>
     </head>
     <body>
-            <section th:fragment="pasos">
-                <h5 class='p-3'> </h5>
-                <h3 class="p-3" >[[#{emergencia.encabezado}]]</h3>
-                <div class="row p-2">
+        <section th:fragment="pasos">
+            <h5 class='p-3'> </h5>
+            <div class="container text-center">
+                <h1 class="bg-danger text-white p-3">[[#{emergencia.encabezado}]]</h1>
+            </div>
+            <div class="row p-4">
                 <div>              
                     <div th:if="${emergencias != null and !emergencias.empty}">
                         <table class="table table-striped table-hover">
@@ -36,6 +38,47 @@
                     </div>
                 </div>
             </div>
-            </section>
-    </body>
+        </section>
+        <section th:fragment="contactos">
+             <h5 class='p-3'> </h5>
+            <div class="container text-center">
+                <h1 class="bg-danger text-white p-3">[[#{emergencia.contactos}]]</h1>
+            </div>
+             <div class="row p-4"> 
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-9"> 
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>  
+                                    <th class="table-danger text-center" scope="col">Institución</th>
+                                    <th class="table-danger text-center" scope="col">Llamadas</th>
+                                    <th class="table-danger text-center" scope="col">Correo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class='text-center' scope="row">Adóptame Liberia</th>
+                                    <td class='text-center'>8870-5727</td>
+                                    <td class='text-center'>perrosygatosliberia@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <th class='text-center' scope="row"> SENASA</th>
+                                    <td class='text-center'>2587-1600</td>
+                                    <td class='text-center'>info@senasa.go.cr</td>
+                                </tr>
+                                <tr>
+                                    <th class='text-center' scope="row">Yomeuno</th>
+                                    <td class='text-center'>8727-7589</td>
+                                    <td class='text-center'>info@animalesdeasis.com</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+             </div>
+        </section>
+         </body>
 </html>
